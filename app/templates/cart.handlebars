@@ -1,0 +1,9 @@
+<h1>Your Cart</h1>
+  <ul class='list-unstyled'>
+    {{# each items }}
+      <li>
+        {{this.quantity}}
+        {{this.product.name}}
+      </li>
+    {{/ each }}
+  </ul>
