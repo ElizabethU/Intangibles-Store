@@ -6,7 +6,7 @@
       <ul class='list-unstyled'>
         {{# each }}
           <li>
-            {{# link-to "products" }}
+            {{# link-to "product" this }}
               {{ name }}
             {{/ link-to }}
           </li>
@@ -17,6 +17,6 @@
     {{/unless}}
   </div>
   <div class='col-lg-10'>
-    Product View Goes Here
+    {{ outlet }}
   </div>
 </div>
