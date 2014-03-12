@@ -8,6 +8,7 @@
   </div>
   <div class='col-lg-4'>
     {{ description }}<br>
-    Price: {{ format-money price }}
+    Price: {{ format-money price }}<br>
+    <button {{action "addToCart" this }}>Add to Cart</button>
   </div>
 </div>
