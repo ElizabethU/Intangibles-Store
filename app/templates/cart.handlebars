@@ -1,10 +1,25 @@
 <h1>Your Cart</h1>
-  <ul class='list-unstyled'>
-    {{# each items }}
-      <li>
-        {{this.quantity}}
-        {{this.product.name}}
-        <button {{action 'deleteItem' this}}>Remove</button>
-      </li>
-    {{/ each }}
-  </ul>
+    <table>
+      <thead>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </thead>
+    <tbody>
+      {{# each items }}
+      <tr>
+        <td>{{this.product.name}}</td>
+        <td>{{this.quantity}}</td>
+        <td>{{format-money this.current_price}}</td>
+        <td>{{format-money this.subtotal}}</td>
+        <td><button {{action 'deleteItem' this}}>Remove</button></td>
+      </tr>
+      {{/ each }}
+      <tr>
+        <td></td>
+        <td></td>
+        <td><strong>Total:</strong></td>
+      </tr>
+    </tbody>
+  </table>
