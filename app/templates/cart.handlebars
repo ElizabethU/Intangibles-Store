@@ -4,6 +4,7 @@
       <li>
         {{this.quantity}}
         {{this.product.name}}
+        <button {{action 'deleteItem' this}}>Remove</button>
       </li>
     {{/ each }}
   </ul>

@@ -1,1 +1,14 @@
-<h3>No, still main page. no products. Also, let's figure out how to put product on the main page.</h3>
+<div class='row'>
+    <h4>All Products</h4>
+      <ul class='list-unstyled'>
+        {{# each }}
+          <li>
+            {{# link-to "product" this }}
+              <img {{ bind-attr src=avatar }} />
+              {{ name }}
+            {{/ link-to }}
+          </li>
+        {{/ each }}
+      </ul>
+  </div>
+</div>

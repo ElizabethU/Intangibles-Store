@@ -1,8 +1,8 @@
 App.Item = DS.Model.extend({
   product: DS.belongsTo('product'),
-  quantity: DS.attr('integer'),
+  quantity: DS.attr('number'),
   cart: DS.belongsTo('cart'),
-  current_price: DS.attr('integer')
+  current_price: DS.attr('number')
 });
 
 App.Item.FIXTURES = [
