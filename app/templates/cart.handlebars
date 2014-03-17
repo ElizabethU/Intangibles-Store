@@ -10,7 +10,7 @@
       {{# each items }}
       <tr>
         <td>{{this.product.name}}</td>
-        <td>{{this.quantity}}</td>
+        <td>{{ input type="number" value=quantity min=1 }}</td>
         <td>{{format-money this.current_price}}</td>
         <td>{{format-money this.subtotal}}</td>
         <td><button {{action 'deleteItem' this}}>Remove</button></td>
@@ -24,3 +24,33 @@
       </tr>
     </tbody>
   </table>
+{{#if checkout }}
+  <button {{ action 'hideCheckout' this }}>Nevermind</button><br><br>
+  <div class='form-group'>
+  <label for="name">Name</label>
+  {{input type='text' value=proxy.name class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="email">Email</label>
+  {{input type='text' value=proxy.email class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="creditcardnumber">Credit Card Number</label>
+  {{input type='text' value=proxy.creditcardnumber class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="cvv">CVV</label>
+  {{input type='text' value=proxy.cvv class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="expirationdate">Expiration Date</label>
+  {{input type='text' value=proxy.expirationdate class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="zipcode">Zip Code</label>
+  {{input type='text' value=proxy.zipcode class='form-control'}}
+</div>
+<button class='btn btn-success' {{action 'confirm' proxy }}>Purchase</button>
+{{else}}
+  <button {{ action 'checkout' this }}>Checkout</button>
+{{/if}}
