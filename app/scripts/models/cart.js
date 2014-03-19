@@ -1,3 +1,7 @@
+App.CartAdapter = DS.LSAdapter.extend({
+  namespace: 'brewstersmillions'
+});
+
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', {async: true}),
   total: function(){
@@ -12,15 +16,17 @@ App.Cart = DS.Model.extend({
   }.property('items.@each.subtotal')
 });
 
-App.Cart.FIXTURES = [
-  {
-    id: "fixture-0",
-    order: 1,
-    items: [1, 2]
+// App.CartAdapter = DS.FixtureAdapter.extend();
 
-      }, {
-    id: 2,
-    order: 1,
-    items: [3]
-  }
-]
+// App.Cart.FIXTURES = [
+//   {
+//     id: "fixture-0",
+//     order: 1,
+//     items: [1, 2]
+
+//       }, {
+//     id: 2,
+//     order: 1,
+//     items: [3]
+//   }
+// ]

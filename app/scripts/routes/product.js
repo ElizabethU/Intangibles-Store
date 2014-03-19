@@ -15,6 +15,7 @@ App.ProductRoute = Ember.Route.extend({
         cart.get('items').then(function(items) { 
           items.pushObject(item);
         })
+        cart.save();
         item.save();
 
     this.transitionTo('cart')

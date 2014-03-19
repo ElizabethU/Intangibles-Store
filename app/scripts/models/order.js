@@ -8,17 +8,3 @@ App.Order = DS.Model.extend({
   ccv: DS.attr('string'),
   ccnumber: DS.attr('string')
 });
-
-App.Order.FIXTURES = [
-  {
-    id: 1,
-    cart: 1,
-    customer_name: "Elizabeth Uselton",
-    email: 'elizabeth@elizabeth.com',
-    status: 'pending',
-    zipcode: '98102',
-    expdate: '',
-    ccv: '123',
-    ccnumber: '1234567890123456'
-  }
-]
