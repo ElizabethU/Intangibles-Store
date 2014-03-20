@@ -1,7 +1,3 @@
-App.CartAdapter = DS.LSAdapter.extend({
-  namespace: 'brewstersmillions'
-});
-
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', {async: true}),
   total: function(){

@@ -6,5 +6,5 @@ App.Router.map(function(){
   this.resource("orders", function () {
     this.resource("order", { path: ":order_id" })
   })
-  this.resource("cart")
+  this.resource("cart");
 });
