@@ -7,6 +7,7 @@ App.CartRoute = Ember.Route.extend({
     return this.modelFor('application');
   },
   actions: {
+
     confirm: function(proxy) {
       var order = this.store.createRecord('order', proxy)
       var self = this;
