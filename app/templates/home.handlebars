@@ -1,14 +1,13 @@
 <div class='row'>
     <h4>All Products</h4>
-      <ul class='list-unstyled'>
-        {{# each }}
-          <li>
-            {{# link-to "product" this }}
-              <img {{ bind-attr src=avatar }} />
-              {{ name }}
-            {{/ link-to }}
-          </li>
-        {{/ each }}
-      </ul>
-  </div>
+    <ul class='list-unstyled'>
+      {{# each }}
+        <li>
+          {{# link-to "product" this }}
+            <img {{ bind-attr src=avatar }} />
+            {{ name }}
+          {{/ link-to }}
+        </li>
+      {{/ each }}
+    </ul>
 </div>
