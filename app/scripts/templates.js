@@ -61,10 +61,10 @@ function program3(depth0,data) {
   var buffer = '', helper, options;
   data.buffer.push("\n  <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideCheckout", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">Nevermind</button><br><br>\n  <div class='form-group'>\n  <label for=\"name\">Name</label>\n  ");
+  data.buffer.push(">Nevermind</button><br><br>\n  <div class='form-group'>\n  <label for=\"customer_name\">Name</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
-    'value': ("proxy.name"),
+    'value': ("proxy.customer_name"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"email\">Email</label>\n  ");
@@ -73,7 +73,7 @@ function program3(depth0,data) {
     'value': ("proxy.email"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"creditcardnumber\">Credit Card Number</label>\n  ");
+  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"cccnumber\">Credit Card Number</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
     'value': ("proxy.creditcardnumber"),
@@ -85,7 +85,7 @@ function program3(depth0,data) {
     'value': ("proxy.cvv"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"expirationdate\">Expiration Date</label>\n  ");
+  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"expdate\">Expiration Date</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
     'value': ("proxy.expirationdate"),
@@ -117,9 +117,7 @@ function program5(depth0,data) {
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      <tr>\n        <td></td>\n        <td></td>\n        <td><strong>Total:</strong></td>\n        <td> ");
   data.buffer.push(escapeExpression((helper = helpers['format-money'] || (depth0 && depth0['format-money']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "format-money", "total", options))));
-  data.buffer.push(" </td>\n      </tr>\n    </tbody>\n  </table>\n<button ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "items", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">Will this show things?</button><br>\n");
+  data.buffer.push(" </td>\n      </tr>\n    </tbody>\n  </table>\n");
   stack1 = helpers['if'].call(depth0, "checkout", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   return buffer;
@@ -165,10 +163,22 @@ function program2(depth0,data) {
 Ember.TEMPLATES["order"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  
+  var buffer = '', stack1;
 
 
-  data.buffer.push("<h2>If you're seeing this, you are a winner!</h2>");
+  data.buffer.push("Order Id: ");
+  stack1 = helpers._triageMustache.call(depth0, "id", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<br><br>\n\nName: ");
+  stack1 = helpers._triageMustache.call(depth0, "customer_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<br><br>\n\nemail: ");
+  stack1 = helpers._triageMustache.call(depth0, "email", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<br><br>\n\n");
+  stack1 = helpers._triageMustache.call(depth0, "status", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  return buffer;
   
 });
 

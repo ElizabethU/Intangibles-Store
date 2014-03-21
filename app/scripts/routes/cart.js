@@ -4,16 +4,21 @@ App.CartRoute = Ember.Route.extend({
   // },
 
   model: function() {
-    return this.modelFor('application');
+    return this.controllerFor('application').get('cart');
   },
   actions: {
 
     confirm: function(proxy) {
-      var order = this.store.createRecord('order', proxy)
       var self = this;
-      order.save().then(
-        function (order) {
+      var order = this.store.createRecord('order', proxy)
+      this.controllerFor("application").get('cart').then(function (cart) {
+        order.save().then(function (order) {
           alert('success')
+          var cart = self.store.createRecord('cart')
+          cart.save().then(function (cart) {
+            localStorage.cartId = cart.get('id')
+            self.controllerFor('application').set('cart', self.store.find('cart', cart.get('id')))
+          })
           self.transitionTo('order', order.id);
         },
         function (error) {
@@ -21,6 +26,7 @@ App.CartRoute = Ember.Route.extend({
           alert(error)
         }
       )
+    })
     },
 
     deleteItem: function(item) {

@@ -24,19 +24,18 @@
       </tr>
     </tbody>
   </table>
-<button {{ action 'items' this }}>Will this show things?</button><br>
 {{#if checkout }}
   <button {{ action 'hideCheckout' this }}>Nevermind</button><br><br>
   <div class='form-group'>
-  <label for="name">Name</label>
-  {{input type='text' value=proxy.name class='form-control'}}
+  <label for="customer_name">Name</label>
+  {{input type='text' value=proxy.customer_name class='form-control'}}
 </div>
 <div class='form-group'>
   <label for="email">Email</label>
   {{input type='text' value=proxy.email class='form-control'}}
 </div>
 <div class='form-group'>
-  <label for="creditcardnumber">Credit Card Number</label>
+  <label for="cccnumber">Credit Card Number</label>
   {{input type='text' value=proxy.creditcardnumber class='form-control'}}
 </div>
 <div class='form-group'>
@@ -44,7 +43,7 @@
   {{input type='text' value=proxy.cvv class='form-control'}}
 </div>
 <div class='form-group'>
-  <label for="expirationdate">Expiration Date</label>
+  <label for="expdate">Expiration Date</label>
   {{input type='text' value=proxy.expirationdate class='form-control'}}
 </div>
 <div class='form-group'>
