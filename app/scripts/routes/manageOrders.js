@@ -1,6 +1,6 @@
 App.ManageCheckoutRoute = Ember.Route.extend({
   model: function () {
-    return this.store.find("checkout");
+    return this.store.find("order");
   },
 
   actions: {
