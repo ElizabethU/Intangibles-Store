@@ -12,6 +12,7 @@ App.CartRoute = Ember.Route.extend({
       var self = this;
       var order = this.store.createRecord('order', proxy)
       this.controllerFor("application").get('cart').then(function (cart) {
+        order.set('status', 'paid')
         order.save().then(function (order) {
           alert('success')
           var cart = self.store.createRecord('cart')
