@@ -4,7 +4,7 @@ App.ManageCheckoutRoute = Ember.Route.extend({
   },
 
   actions: {
-    checkout: function (){
+    confirm: function (){
 
     }
   }

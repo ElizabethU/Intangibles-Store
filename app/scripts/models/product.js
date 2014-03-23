@@ -1,5 +1,4 @@
 App.Product = DS.Model.extend({
-  item: DS.belongsTo('item'),
   name: DS.attr("string"),
   price: DS.attr("number"),
   image: DS.attr("string"),

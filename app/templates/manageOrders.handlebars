@@ -1,0 +1,13 @@
+<br>
+<ul class='list-unstyled'>
+  {{# each }}
+    <li>
+      {{# link-to "order" this }}Order #{{ id }}{{/ link-to}}<br>
+      Name: {{ name }}<br>
+      Status: {{ status }} <br>
+      <label for="status">Change Status:</label>
+      {{ input type="text" value=status class="form" }}
+      <button {{ action 'checkout' this }} class="btn btn-default">Change!</button>
+    </li>
+  {{/ each }}
+</ul>
