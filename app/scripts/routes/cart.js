@@ -23,7 +23,7 @@ App.CartRoute = Ember.Route.extend({
         },
         function (error) {
           order.deleteRecord();
-          alert(error)
+          alert('There was a problem processing your order.')
         }
       )
     })

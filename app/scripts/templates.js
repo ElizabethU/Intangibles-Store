@@ -76,19 +76,19 @@ function program3(depth0,data) {
   data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"cccnumber\">Credit Card Number</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
-    'value': ("proxy.creditcardnumber"),
+    'value': ("proxy.ccnumber"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"cvv\">CVV</label>\n  ");
+  data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"ccv\">CVV</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
-    'value': ("proxy.cvv"),
+    'value': ("proxy.ccv"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"expdate\">Expiration Date</label>\n  ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
     'type': ("text"),
-    'value': ("proxy.expirationdate"),
+    'value': ("proxy.expdate"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n</div>\n<div class='form-group'>\n  <label for=\"zipcode\">Zip Code</label>\n  ");
