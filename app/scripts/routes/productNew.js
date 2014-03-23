@@ -18,4 +18,4 @@ App.ProductNewRoute = Ember.Route.extend({
       );
     }
   }
-});
+})
